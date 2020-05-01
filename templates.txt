@@ -1,2 +1,3 @@
 __label__unique <Courtesy> give me the <Color> <Object> that is on the <Support>
 __label__unique <Courtesy> give me the <Color> <Object> that is inside the <Container>
+__label__multiple <Courtesu> bring the <Object>s inside
