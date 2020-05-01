@@ -1,0 +1,27 @@
+Color,Object,Size,Support,Container,Food,Furniture,Vehicule,Relation,Action,Courtesy
+blue,cup,big,table,box,apple,chair,bicycle,inside,grab,Please could you
+red,bottle,small,desk,shelf,sandwich,couch,car,on,hold,Hey ! Can you
+orange,cube,large,stand,toolbox,orange,bed,motorcycle,in front of you,give,Could you
+yellow,pencil,[none],console,carton,broccoli,dining table,airplane,behind,support,Whould you like to
+green,beer,huge,,case,carrot,toilet,bus,on the left,carry,Hello
+black,fork,,,packet,hot dog,tv,train,on the right,,[none]
+gray,knife,,,bag,pizza,potted_plant,boat,on top of,,
+purple,plate,,,handbag,donut,microwave,truck,in,,
+white,pen,,,backpack,cake,oven,,at the edge of,,
+[none],phone,,,,banana,refrigerator,,in the middle of,,
+wooden,book,,,,,vase,,,,
+,ball,,,,,clock,,,,
+,glass,,,,,sink,,,,
+,screwdriver,,,,,,,,,
+,clamp,,,,,,,,,
+,shoe,,,,,,,,,
+,bowl,,,,,,,,,
+,umbrella,,,,,,,,,
+,laptop,,,,,,,,,
+,mouse,,,,,,,,,
+,keyboard,,,,,,,,,
+,cell phone,,,,,,,,,
+,scissors,,,,,,,,,
+,hair drier,,,,,,,,,
+,toothbrush,,,,,,,,,
+,scissors,,,,,,,,,
