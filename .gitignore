@@ -1,7 +1,5 @@
-src-train.txt
-src-val.txt
-tgt-train.txt
-tgt-val.txt
+train.txt
+val.txt
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
