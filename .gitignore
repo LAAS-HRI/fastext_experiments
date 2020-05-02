@@ -1,5 +1,12 @@
+models/word_embeddings/
+
 train.txt
 val.txt
+word_vectors.txt
+vocab.txt
+
+model.bin
+model.ftz
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

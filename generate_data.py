@@ -33,7 +33,7 @@ def load_individuals(individuals_file_path):
     return individuals_map
 
 
-def generate_data(templates, individuals, nb_examples_per_template=600):
+def generate_data(templates, individuals, nb_examples_per_template=1000):
     data = []
     already_generated = {}
     for temp in templates:
@@ -53,7 +53,6 @@ def fill_template(template, individuals):
         template = template.replace(key, individual)
         template = template.replace(" [none] ", " ")
         template = template.replace("[none] ", "")
-        #template = template.lower()
     return template
 
 
@@ -64,17 +63,21 @@ def pick_index(sequence):
 def save(data, training_file_path, validation_file_path):
     nb_train = 0
     nb_val = 0
+    split_index = int(len(data)*0.333)
+    train_data = data[split_index:]
+    val_data = data[:split_index]
     with open(training_file_path, 'w') as train_file:
-        with open(validation_file_path, 'w') as val_file:
-            for line in data:
-                if np.random.random_sample() > 0.333:
-                    train_file.write(line)
-                    nb_train += 1
-                else:
-                    val_file.write(line)
-                    nb_val += 1
-            print ("Saved "+str(nb_train)+" pairs in training dataset: "+training_file_path)
-            print ("Saved "+str(nb_val)+" pairs in validation dataset: "+validation_file_path)
+        for line in train_data:
+            train_file.write(line)
+            nb_train += 1
+
+    with open(validation_file_path, 'w') as val_file:
+        for line in val_data:
+            val_file.write(line)
+            nb_val += 1
+
+    print ("Saved "+str(nb_train)+" samples in training dataset: " + training_file_path)
+    print ("Saved "+str(nb_val)+" samples in validation dataset: " + validation_file_path)
 
 
 def main(templates_file_path="templates.csv", individuals_file_path="individuals.csv", max_examples_per_template=600, train_file="train.txt", val_file="val.txt"):
@@ -89,8 +92,8 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='The dataset generator.')
     parser.add_argument("--templates", type=str, default="templates.txt", help='The templates file to use')
     parser.add_argument("--individuals", type=str, default="individuals.csv", help='The individuals to randomly pick')
-    parser.add_argument("--examples_per_template", type=int, default=1000, help="The max number of examples to generate per template")
+    parser.add_argument("--max_per_template", type=int, default=50, help="The max number of examples to generate per template")
 
     args = parser.parse_args()
     print ("Start generating dataset...")
-    main(templates_file_path=args.templates, individuals_file_path=args.individuals, max_examples_per_template=args.examples_per_template)
+    main(templates_file_path=args.templates, individuals_file_path=args.individuals, max_examples_per_template=args.max_per_template)
