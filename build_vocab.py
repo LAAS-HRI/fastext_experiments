@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-
+import numpy as np
 import argparse
 import fasttext
 
@@ -11,7 +11,7 @@ def load_pretrained_model(pretrained_embeddings_file_path):
     return model
 
 
-def load_vocab(model, data_file_path, augmentation=True):
+def load_vocab(model, data_file_path, augmentation=False):
     word_to_vector = {}
     with open(data_file_path, "r") as file:
         for line in file:
@@ -31,7 +31,11 @@ def save_vocab(word_to_vector, output_vocab_file):
     print "Save vocab of {} words...".format(len(word_to_vector))
     with open(output_vocab_file, 'w') as vocab_file:
         for word, vector in word_to_vector.items():
-            vocab_file.write("{}\n\r".format(word))
+            vector_str = str(vector).replace("[", "")
+            vector_str = vector_str.replace("]", "")
+            vector_str = vector_str.replace("\n", "")
+            vector_str = vector_str.replace("\r", "")
+            vocab_file.write("{} {}".format(word, vector_str))
     print("Done !")
 
 
