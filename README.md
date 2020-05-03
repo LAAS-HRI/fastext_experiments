@@ -1,4 +1,4 @@
-# fastext_experiments
+# fasttext_experiments
 
 FastText is an open source software based on subword static word embeddings for efficient text classification. It allow to compute embeddings for unknown words based on subwords and provide multilabel supervised classification. Word embeddings pretrained on Common Crawl and Wikipedia for [157 languages](https://fasttext.cc/docs/en/crawl-vectors.html) are also provided.
 
