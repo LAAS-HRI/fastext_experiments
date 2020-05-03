@@ -12,7 +12,7 @@ def print_results(N, p, r):
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='The dataset generator.')
+    parser = argparse.ArgumentParser(description='Train and evaluate a fasttext supervised model')
     parser.add_argument("--training_data", type=str, default="train.txt", help='The training file to use')
     parser.add_argument("--validation_data", type=str, default="val.txt", help='The validation file to use')
     parser.add_argument("--epoch", type=str, default=25, help='Number of epoch')

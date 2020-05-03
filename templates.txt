@@ -13,4 +13,4 @@ __label__multiple <Courtesy> bring me the <Color> <Object>s
 __label__unique <Courtesy> hold me that <Object>
 __label__multiple <Courtesy> bring the <Color> <Object>s
 __label__unique <Courtesy> bring the <Color> <Object>
-__label__unique __label__relational <Courtesy> give me the <Object> on your left
+__label__unique __label__relational <Courtesy> give me the <Color> <Object> on your left
