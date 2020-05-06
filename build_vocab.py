@@ -33,9 +33,8 @@ def save_vocab(word_to_vector, output_vocab_file):
         for word, vector in word_to_vector.items():
             vector_str = str(vector).replace("[", "")
             vector_str = vector_str.replace("]", "")
-            vector_str = vector_str.replace("\n", "")
-            vector_str = vector_str.replace("\r", "")
-            vocab_file.write("{} {}".format(word, vector_str))
+            vector_str = "-".join(vector_str.split()).replace("-", " ")
+            vocab_file.write("{} {}\n\r".format(word, vector_str))
     print("Done !")
 
 
