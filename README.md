@@ -9,7 +9,7 @@ More information in [FastText website](https://fasttext.cc/).
 ## Quick launch
 
 ```
-git clone
+git clone https://github.com/LAAS-HRI/fasttext_experiments.git
 ./install_dependencies.sh
 python generate_data.py --max_per_template 80
 python train_and_evaluate.py
